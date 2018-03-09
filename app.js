@@ -20,7 +20,7 @@ let request = https.request(options, (response)=> {
     //console.log(body)
 
     let profile = JSON.parse(body);
-    console.log(profile)
+    console.log(`${profile.login} owns ${profile.public_repos} repo(s) and has ${profile.followers} followers`)
   })
 })
 
