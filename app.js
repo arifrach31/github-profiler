@@ -3,7 +3,7 @@ let https = require('https')
 const options = {
   hostname: "api.github.com",
   port: 443,
-  patch: "/users/arifrachcom",
+  path: '/users/arifrachcom',
   method: "GET",
   headers: {
     'user-agent': 'arifrachcom'
@@ -17,7 +17,10 @@ let request = https.request(options, (response)=> {
     body = body + data
   })
   response.on('end', ()=> {
-    console.log(body)
+    //console.log(body)
+
+    let profile = JSON.parse(body);
+    console.log(profile)
   })
 })
 
